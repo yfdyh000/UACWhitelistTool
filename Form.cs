@@ -122,32 +122,12 @@ namespace UAC白名单小工具
         {
             TextBox_程序名称.Text = Regex.Replace(TextBox_程序名称.Text, @"[^\u4e00-\u9fa5_a-zA-Z0-9\.]", "");
             //Debug.Print(TextBox_程序名称.Text);
-            if (TextBox_程序名称.Text != "")
-            {
-                if (TextBox_程序位置.Text != "")
-                {
-                    Button_添加.Enabled = true;
-                }
-            }
-            else
-            {
-                Button_添加.Enabled = false;
-            }
+            Button_添加.Enabled = TextBox_程序名称.Text != "" && TextBox_程序位置.Text != "";
         }
         // 监视输入框
         private void TextBox_程序位置_TextChanged(object sender, EventArgs e)
         {
-            if (TextBox_程序位置.Text != "")
-            {
-                if (TextBox_程序名称.Text != "")
-                {
-                    Button_添加.Enabled = true;
-                }
-            }
-            else
-            {
-                Button_添加.Enabled = false;
-            }
+            Button_添加.Enabled = TextBox_程序名称.Text != "" && TextBox_程序位置.Text != "";
         }
         // 用对话框选择文件
         private void Button_浏览_Click(object sender, EventArgs e)
