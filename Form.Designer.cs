@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.Label_程序名称 = new System.Windows.Forms.Label();
             this.TextBox_程序名称 = new System.Windows.Forms.TextBox();
@@ -38,7 +37,6 @@
             this.Button_浏览 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Button_打开 = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox_添加到右键菜单 = new System.Windows.Forms.CheckBox();
             this.TextBox_启动参数 = new System.Windows.Forms.TextBox();
@@ -174,18 +172,9 @@
             this.Button_打开.UseVisualStyleBackColor = false;
             this.Button_打开.Click += new System.EventHandler(this.Button_打开_Click);
             // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ShowAlways = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "使用方法：";
-            // 
             // label3
             // 
-            this.label3.Cursor = System.Windows.Forms.Cursors.Help;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10F);
             this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.label3.Location = new System.Drawing.Point(421, 168);
@@ -194,7 +183,7 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "使用说明";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.toolTip1.SetToolTip(this.label3, resources.GetString("label3.ToolTip"));
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // checkBox_添加到右键菜单
             // 
@@ -316,7 +305,6 @@
         private System.Windows.Forms.Button Button_浏览;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button Button_打开;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox_添加到右键菜单;
         private System.Windows.Forms.TextBox TextBox_启动参数;

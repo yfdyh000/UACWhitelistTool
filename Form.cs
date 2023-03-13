@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.Drawing;
+using System.Resources;
 
 namespace UAC白名单小工具
 {
@@ -449,6 +450,21 @@ namespace UAC白名单小工具
             {
                 Button_添加.BackColor = SystemColors.ButtonShadow;
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            string text = @"1. [拖拽] 或 [浏览] 选择一个应用程序 (.exe) 或快捷方式 (.lnk) 。
+2. [程序名称]随意，但必须唯一 不可重复。
+3. [启动参数] 与 [起始位置] 均可选。
+4. [添加到 UAC 白名单] 后，你的 [桌面] 就会出现一个快捷方式。
+—— 只有通过该快捷方式运行才不提示 UAC！(运行后默认拥有管理员权限)
+—— 该快捷方式可以复制、移动、重命名，不影响使用！
+
+勾选 [添加软件到右键菜单] 后，可直接右键 .exe / .lnk 文件添加到 UAC 白名单。
+
+注意：为了方便寻找和删除，添加白名单时 [程序名称] 前会添加 [noUAC.] 标识。";
+            MessageBox.Show(text, "使用方法", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
