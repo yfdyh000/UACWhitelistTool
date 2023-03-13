@@ -361,14 +361,15 @@ namespace UAC白名单小工具
         // 置顶输入框并修改背景颜色
         private void TextBox_程序位置_Enter(object sender, EventArgs e)
         {
-            //TextBox_程序位置.BringToFront();
+            if (TextBox_程序位置.Text != "")
+                TextBox_程序位置.BringToFront();
             TextBox_程序位置.BackColor = Label_程序位置.BackColor = Color.Gainsboro;
         }
 
         private void TextBox_程序位置_Leave(object sender, EventArgs e)
         {
-            if (TextBox_程序位置.Text == "")
-                TextBox_程序位置.SendToBack();
+            //if (TextBox_程序位置.Text == "")
+            //    TextBox_程序位置.SendToBack();
             TextBox_程序位置.BackColor = Label_程序位置.BackColor = Color.WhiteSmoke;
         }
 
@@ -429,6 +430,12 @@ namespace UAC白名单小工具
 
 注意：为了方便寻找和删除，添加白名单时 [程序名称] 前会添加 [noUAC.] 标识。";
             MessageBox.Show(text, "使用方法", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Label_程序位置_Click(object sender, EventArgs e)
+        {
+            if(TextBox_程序位置.Text=="")
+                Button_浏览_Click(sender, e);
         }
     }
 }

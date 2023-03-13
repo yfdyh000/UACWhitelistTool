@@ -105,6 +105,7 @@
             this.Label_程序位置.TabIndex = 4;
             this.Label_程序位置.Text = "     程序位置";
             this.Label_程序位置.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Label_程序位置.Click += new System.EventHandler(this.Label_程序位置_Click);
             this.Label_程序位置.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label_程序位置_MouseClick);
             // 
             // Button_添加
