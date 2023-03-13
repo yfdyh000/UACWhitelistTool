@@ -254,7 +254,15 @@ namespace UAC免提醒
                 RegistryKey Key2 = Registry.ClassesRoot.CreateSubKey(@"exefile\shell\NoUACTool\command");
                 Key1.SetValue("", "&UAC 免提醒");
                 Key1.SetValue("Icon", '"' + Application.ExecutablePath + '"');
-                Key2.SetValue("", '"'+ Application.ExecutablePath + '"' + " " + '"' + "%1" + '"');
+                Key2.SetValue("", '"' + Application.ExecutablePath + '"' + " " + '"' + "%1" + '"');
+            }
+            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\lnkfile\shell\NoUACTool\command\", "", null) == null)
+            {
+                RegistryKey Key1 = Registry.ClassesRoot.CreateSubKey(@"lnkfile\shell\NoUACTool");
+                RegistryKey Key2 = Registry.ClassesRoot.CreateSubKey(@"lnkfile\shell\NoUACTool\command");
+                Key1.SetValue("", "&UAC 免提醒");
+                Key1.SetValue("Icon", '"' + Application.ExecutablePath + '"');
+                Key2.SetValue("", '"' + Application.ExecutablePath + '"' + " " + '"' + "%1" + '"');
             }
         }
         private void DelKey()
@@ -263,11 +271,16 @@ namespace UAC免提醒
             {
                 Registry.ClassesRoot.DeleteSubKeyTree(@"exefile\shell\NoUACTool");
             }
+            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\lnkfile\shell\NoUACTool\command\", "", null) != null)
+            {
+                Registry.ClassesRoot.DeleteSubKeyTree(@"lnkfile\shell\NoUACTool");
+            }
         }
         private void NotKey()
         {
             object value = Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\NoUACTool\command\", "", null);
-            checkBox_添加到右键菜单.Checked = value != null;
+            object value2 = Registry.GetValue(@"HKEY_CLASSES_ROOT\lnkfile\shell\NoUACTool\command\", "", null);
+            checkBox_添加到右键菜单.Checked = value != null || value2 != null;
         }
         // 切换焦点为输入框
         private void Label_程序位置_MouseClick(object sender, MouseEventArgs e)
