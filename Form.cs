@@ -295,16 +295,10 @@ namespace UAC白名单小工具
 
         private void CheckBox_添加到右键菜单_CheckedChanged(object sender, EventArgs e)
         {
-            //Debug.Print(checkBox_添加到右键菜单.Checked.ToString());
-            if (checkBox_添加到右键菜单.Checked == true)
-            {
+            if (checkBox_添加到右键菜单.Checked)
                 AddKey();
-            }
             else
-            {
                 DelKey();
-            }
-            
         }
         private void AddKey()
         {
