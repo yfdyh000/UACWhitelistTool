@@ -350,13 +350,13 @@ namespace UAC白名单小工具
 
         private void Button_添加_EnabledChanged(object sender, EventArgs e)
         {
-            Button_添加.BackColor = Button_添加.Enabled  ?  Color.MediumSeaGreen : SystemColors.ButtonShadow;
+            Button_添加.BackColor = Button_添加.Enabled ? Color.MediumSeaGreen : SystemColors.ButtonShadow;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string text = @"1. [拖拽] 或 [浏览] 选择一个应用程序 (.exe) 或快捷方式 (.lnk) 。
-2. [程序名称]随意，但必须唯一 不可重复。
+2. [程序名称]随意，但必须唯一，不可重复。
 3. [启动参数] 与 [起始位置] 均可选。
 4. [添加到 UAC 白名单] 后，你的 [桌面] 就会出现一个快捷方式。
 —— 只有通过该快捷方式运行才不提示 UAC！(运行后默认拥有管理员权限)
@@ -370,7 +370,7 @@ namespace UAC白名单小工具
 
         private void Label_程序位置_Click(object sender, EventArgs e)
         {
-            if(TextBox_程序位置.Text=="")
+            if (TextBox_程序位置.Text == "")
                 Button_浏览_Click(sender, e);
         }
     }

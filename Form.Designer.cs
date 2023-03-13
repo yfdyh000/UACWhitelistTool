@@ -145,11 +145,11 @@
             // 
             this.openFileDialog1.AddExtension = false;
             this.openFileDialog1.DereferenceLinks = false;
-            this.openFileDialog1.Filter = "应用程序(*.exe;*.lnk)|*.exe;*.lnk";
+            this.openFileDialog1.Filter = "快捷方式或可执行文件(*.exe;*.bat;*.lnk)|*.exe;*.bat;*.lnk";
             this.openFileDialog1.ReadOnlyChecked = true;
             this.openFileDialog1.ShowReadOnly = true;
             this.openFileDialog1.SupportMultiDottedExtensions = true;
-            this.openFileDialog1.Title = "选择应用程序或快捷方式";
+            this.openFileDialog1.Title = "选择一个应用程序或快捷方式";
             this.openFileDialog1.ValidateNames = false;
             // 
             // Button_打开
@@ -164,7 +164,7 @@
             this.Button_打开.Name = "Button_打开";
             this.Button_打开.Size = new System.Drawing.Size(512, 36);
             this.Button_打开.TabIndex = 6;
-            this.Button_打开.Text = "打开 [任务计划] 删除白名单";
+            this.Button_打开.Text = "去 [任务计划] 手动删除白名单任务";
             this.Button_打开.UseVisualStyleBackColor = false;
             this.Button_打开.Click += new System.EventHandler(this.Button_打开_Click);
             // 
