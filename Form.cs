@@ -250,7 +250,6 @@ namespace UAC白名单小工具
                 RegistryKey Key2 = Registry.ClassesRoot.CreateSubKey(@"exefile\shell\添加到 UAC 白名单\command");
                 Key1.SetValue("Icon", '"' + Application.ExecutablePath + '"');
                 Key2.SetValue("", '"'+ Application.ExecutablePath + '"' + " " + '"' + "%1" + '"');
-                
             }
         }
         private void DelKey()
@@ -262,17 +261,8 @@ namespace UAC白名单小工具
         }
         private void NotKey()
         {
-            //RegistryKey Key = Registry.ClassesRoot;
-            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\添加到 UAC 白名单\command\", "", null) == null)
-            {
-                checkBox_添加到右键菜单.Checked = false;
-            }
-            else
-            {
-                checkBox_添加到右键菜单.Checked = true;
-            }
-            //Debug.Print(Reg.GetValue("").ToString());
-
+            object value = Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\添加到 UAC 白名单\command\", "", null);
+            checkBox_添加到右键菜单.Checked = value != null;
         }
         // 切换焦点为输入框
         private void Label_程序位置_MouseClick(object sender, MouseEventArgs e)
