@@ -37,7 +37,7 @@ namespace UAC免提醒
             FileVersionInfo VerInfo = FileVersionInfo.GetVersionInfo(Application.ExecutablePath);
             J_VerInfo = VerInfo.FileVersion;
             J_VerInfo = J_VerInfo.Replace(".0","");
-            this.Text = "UAC免提醒 v" + J_VerInfo;
+            this.Text = "UAC 免提醒 v" + J_VerInfo;
             //Task.Run(() => Check_Updates(false));
             NotKey();
         }
@@ -370,7 +370,7 @@ namespace UAC免提醒
 —— 只有通过该快捷方式运行才不提示 UAC！(运行后默认拥有管理员权限)
 —— 该快捷方式可以复制、移动、重命名，不影响使用！
 
-勾选 [添加软件到右键菜单] 后，可直接右键 .exe / .lnk 文件添加到 UAC 白名单。
+勾选 [添加软件到右键菜单] 后，右键菜单中可直接为 .exe 或 .lnk 文件制作 UAC 免提醒的快捷方式。
 
 注意：为了方便寻找和删除，添加白名单时 [程序名称] 前会添加 [" + 快捷方式前缀 + "] 标识。";
             MessageBox.Show(text, "使用方法", MessageBoxButtons.OK, MessageBoxIcon.Information);

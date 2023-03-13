@@ -122,7 +122,7 @@
             this.Button_添加.Name = "Button_添加";
             this.Button_添加.Size = new System.Drawing.Size(512, 44);
             this.Button_添加.TabIndex = 5;
-            this.Button_添加.Text = "添加到 UAC 白名单";
+            this.Button_添加.Text = "创建 UAC 免提醒快捷方式";
             this.Button_添加.UseVisualStyleBackColor = false;
             this.Button_添加.EnabledChanged += new System.EventHandler(this.Button_添加_EnabledChanged);
             this.Button_添加.Click += new System.EventHandler(this.Button_添加_Click);
@@ -294,7 +294,7 @@
             this.MinimizeBox = false;
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UAC免提醒";
+            this.Text = "UAC 免提醒";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
