@@ -247,24 +247,26 @@ namespace UAC免提醒
         }
         private void AddKey()
         {
-            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\添加到 UAC 白名单\command\", "", null) == null)
+            // UAC 免提醒
+            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\NoUACTool\command\", "", null) == null)
             {
-                RegistryKey Key1 = Registry.ClassesRoot.CreateSubKey(@"exefile\shell\添加到 UAC 白名单");
-                RegistryKey Key2 = Registry.ClassesRoot.CreateSubKey(@"exefile\shell\添加到 UAC 白名单\command");
+                RegistryKey Key1 = Registry.ClassesRoot.CreateSubKey(@"exefile\shell\NoUACTool");
+                RegistryKey Key2 = Registry.ClassesRoot.CreateSubKey(@"exefile\shell\NoUACTool\command");
+                Key1.SetValue("", "&UAC 免提醒");
                 Key1.SetValue("Icon", '"' + Application.ExecutablePath + '"');
                 Key2.SetValue("", '"'+ Application.ExecutablePath + '"' + " " + '"' + "%1" + '"');
             }
         }
         private void DelKey()
         {
-            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\添加到 UAC 白名单\command\", "", null) != null)
+            if (Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\NoUACTool\command\", "", null) != null)
             {
-                Registry.ClassesRoot.DeleteSubKeyTree(@"exefile\shell\添加到 UAC 白名单");
+                Registry.ClassesRoot.DeleteSubKeyTree(@"exefile\shell\NoUACTool");
             }
         }
         private void NotKey()
         {
-            object value = Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\添加到 UAC 白名单\command\", "", null);
+            object value = Registry.GetValue(@"HKEY_CLASSES_ROOT\exefile\shell\NoUACTool\command\", "", null);
             checkBox_添加到右键菜单.Checked = value != null;
         }
         // 切换焦点为输入框
