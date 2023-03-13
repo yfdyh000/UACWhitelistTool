@@ -14,6 +14,8 @@ namespace UAC白名单小工具
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        private const string 快捷方式前缀 = "noUAC.";
+        private const string 任务计划文件夹名 = "noUAC\\";
         readonly string[] args;
 
         public FileDropAdmin_cs.FileDropAdmin FileDroper;
@@ -144,7 +146,7 @@ namespace UAC白名单小工具
         // 添加、写入
         private void Button_添加_Click(object sender, EventArgs e)
         {
-            string 文件夹名称 = "noUAC\\";
+            string 文件夹名称 = 任务计划文件夹名;
             string 项目名;
             // 任务计划中放入文件夹
             //if (!TextBox_程序名称.Text.StartsWith(文件夹名称))
@@ -170,7 +172,7 @@ namespace UAC白名单小工具
             //Debug.Print("/create " + "/tn " + '"' + TextBox_程序名称.Text + '"' + " /xml " + '"' + @TempFileName + '"');
             //Schtasks.Verb = "runas";
             Process.Start(Schtasks);
-            Create_Shortcut(项目名, "noUAC." + TextBox_程序名称.Text);
+            Create_Shortcut(项目名, 快捷方式前缀 + TextBox_程序名称.Text);
             System.Threading.Thread.Sleep(200);
             System.IO.File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + @"\" + TextBox_程序名称.Text + ".xml");
             MessageBox.Show("UAC白名单添加完成！\n\n快捷方式位于桌面：\n" + System.Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory) + @"\" + TextBox_程序名称.Text + "\n\n只有通过该快捷方式运行才不会提示 UAC，快捷方式可复制、移动、重命名。", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
