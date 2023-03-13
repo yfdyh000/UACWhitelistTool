@@ -382,73 +382,58 @@ namespace UAC白名单小工具
         private void TextBox_程序位置_Enter(object sender, EventArgs e)
         {
             //TextBox_程序位置.BringToFront();
-            TextBox_程序位置.BackColor = Color.Gainsboro;
-            Label_程序位置.BackColor = Color.Gainsboro;
+            TextBox_程序位置.BackColor = Label_程序位置.BackColor = Color.Gainsboro;
         }
 
         private void TextBox_程序位置_Leave(object sender, EventArgs e)
         {
             if (TextBox_程序位置.Text == "")
                 TextBox_程序位置.SendToBack();
-            TextBox_程序位置.BackColor = Color.WhiteSmoke;
-            Label_程序位置.BackColor = Color.WhiteSmoke;
+            TextBox_程序位置.BackColor = Label_程序位置.BackColor = Color.WhiteSmoke;
         }
 
         private void TextBox_程序名称_Enter(object sender, EventArgs e)
         {
             TextBox_程序名称.BringToFront();
-            TextBox_程序名称.BackColor = Color.Gainsboro;
-            Label_程序名称.BackColor = Color.Gainsboro;
+            TextBox_程序名称.BackColor = Label_程序名称.BackColor = Color.Gainsboro;
         }
 
         private void TextBox_程序名称_Leave(object sender, EventArgs e)
         {
             if (TextBox_程序名称.Text == "")
                 TextBox_程序名称.SendToBack();
-            TextBox_程序名称.BackColor = Color.WhiteSmoke;
-            Label_程序名称.BackColor = Color.WhiteSmoke;
+            TextBox_程序名称.BackColor = Label_程序名称.BackColor = Color.WhiteSmoke;
         }
 
         private void TextBox_启动参数_Enter(object sender, EventArgs e)
         {
             TextBox_启动参数.BringToFront();
-            TextBox_启动参数.BackColor = Color.Gainsboro;
-            Label_启动参数.BackColor = Color.Gainsboro;
+            TextBox_启动参数.BackColor = Label_启动参数.BackColor = Color.Gainsboro;
         }
 
         private void TextBox_启动参数_Leave(object sender, EventArgs e)
         {
             if (TextBox_启动参数.Text == "")
                 TextBox_启动参数.SendToBack();
-            TextBox_启动参数.BackColor = Color.WhiteSmoke;
-            Label_启动参数.BackColor = Color.WhiteSmoke;
+            TextBox_启动参数.BackColor = Label_启动参数.BackColor = Color.WhiteSmoke;
         }
 
         private void TextBox_起始位置_Enter(object sender, EventArgs e)
         {
             TextBox_起始位置.BringToFront();
-            TextBox_起始位置.BackColor = Color.Gainsboro;
-            Label_起始位置.BackColor = Color.Gainsboro;
+            TextBox_起始位置.BackColor = Label_起始位置.BackColor = Color.Gainsboro;
         }
 
         private void TextBox_起始位置_Leave(object sender, EventArgs e)
         {
             if (TextBox_起始位置.Text == "")
                 TextBox_起始位置.SendToBack();
-            TextBox_起始位置.BackColor = Color.WhiteSmoke;
-            Label_起始位置.BackColor = Color.WhiteSmoke;
+            TextBox_起始位置.BackColor = Label_起始位置.BackColor = Color.WhiteSmoke;
         }
 
         private void Button_添加_EnabledChanged(object sender, EventArgs e)
         {
-            if (Button_添加.Enabled == true)
-            {
-                Button_添加.BackColor = Color.MediumSeaGreen;
-            }
-            else
-            {
-                Button_添加.BackColor = SystemColors.ButtonShadow;
-            }
+            Button_添加.BackColor = Button_添加.Enabled  ?  Color.MediumSeaGreen : SystemColors.ButtonShadow;
         }
 
         private void button1_Click(object sender, EventArgs e)
