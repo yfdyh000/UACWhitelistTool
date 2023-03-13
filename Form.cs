@@ -49,15 +49,13 @@ namespace UAC白名单小工具
         {
             Handling_File_Drop(((string[])e.Data.GetData(typeof(string[])))[0]);
         }
-        // 处理拖放进来的文件
-        private void Handling_File_Drop(string Drag_File_PATH)
-        {
-            Debug.Print(Drag_File_PATH);
-            if (Path.GetExtension(Drag_File_PATH).ToLower() == ".exe" || Path.GetExtension(Drag_File_PATH).ToLower()  == ".bat")
+        private void Handling_File(string pathstr) {
+            string ext = Path.GetExtension(pathstr).ToLower();
+            if (ext == ".exe" || ext == ".bat")
             {
-                if (System.IO.File.Exists(Drag_File_PATH))
+                if (System.IO.File.Exists(pathstr))
                 {
-                    TextBox_程序位置.Text = Drag_File_PATH;
+                    TextBox_程序位置.Text = pathstr;
                     TextBox_程序名称.Text = Path.GetFileNameWithoutExtension(TextBox_程序位置.Text);
                     TextBox_启动参数.Text = "";
                     TextBox_起始位置.Text = "";
@@ -68,15 +66,15 @@ namespace UAC白名单小工具
                 }
                 else
                 {
-                    MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + Drag_File_PATH, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + pathstr, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (Path.GetExtension(Drag_File_PATH).ToLower() == ".lnk")
+            else if (ext == ".lnk")
             {
-                if (System.IO.File.Exists(Drag_File_PATH))
+                if (System.IO.File.Exists(pathstr))
                 {
                     WshShell shell = new WshShell();
-                    IWshShortcut Shortcut = (IWshShortcut)shell.CreateShortcut(Drag_File_PATH);
+                    IWshShortcut Shortcut = (IWshShortcut)shell.CreateShortcut(pathstr);
                     if (System.IO.File.Exists(Shortcut.TargetPath))
                     {
                         TextBox_程序位置.Text = Shortcut.TargetPath;
@@ -85,7 +83,7 @@ namespace UAC白名单小工具
                         TextBox_起始位置.Text = Shortcut.WorkingDirectory;
                         TextBox_程序位置.BringToFront();
                         TextBox_程序名称.BringToFront();
-                        if(TextBox_启动参数.Text != "")
+                        if (TextBox_启动参数.Text != "")
                         {
                             TextBox_启动参数.BringToFront();
                         }
@@ -104,18 +102,24 @@ namespace UAC白名单小工具
                     }
                     else
                     {
-                        MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + Shortcut.TargetPath, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("目标文件不存在！请检查！" + Environment.NewLine + Shortcut.TargetPath, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + Drag_File_PATH, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + pathstr, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("只支持拖入 .exe .lnk 格式的文件！", "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("仅支持 .exe .bat .lnk 格式的文件！", "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        // 处理拖放进来的文件
+        private void Handling_File_Drop(string Drag_File_PATH)
+        {
+            Debug.Print(Drag_File_PATH);
+            Handling_File(Drag_File_PATH);
         }
         // 监视输入框
         private void TextBox_程序名称_TextChanged(object sender, EventArgs e)
@@ -134,69 +138,7 @@ namespace UAC白名单小工具
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if (Path.GetExtension(openFileDialog1.FileName) == ".exe")
-                {
-                    if (System.IO.File.Exists(openFileDialog1.FileName))
-                    {
-                        TextBox_程序位置.Text = openFileDialog1.FileName;
-                        TextBox_程序名称.Text = Path.GetFileNameWithoutExtension(TextBox_程序位置.Text);
-                        TextBox_启动参数.Text = "";
-                        TextBox_起始位置.Text = "";
-                        TextBox_启动参数.SendToBack();
-                        TextBox_起始位置.SendToBack();
-                        TextBox_程序位置.BringToFront();
-                        TextBox_程序名称.BringToFront();
-                    }
-                    else
-                    {
-                        MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + openFileDialog1.FileName, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else if (Path.GetExtension(openFileDialog1.FileName) == ".lnk")
-                {
-                    if (System.IO.File.Exists(openFileDialog1.FileName))
-                    {
-                        WshShell shell = new WshShell();
-                        IWshShortcut Shortcut = (IWshShortcut)shell.CreateShortcut(openFileDialog1.FileName);
-                        if (System.IO.File.Exists(Shortcut.TargetPath))
-                        {
-                            TextBox_程序位置.Text = Shortcut.TargetPath;
-                            TextBox_程序名称.Text = Path.GetFileNameWithoutExtension(TextBox_程序位置.Text);
-                            TextBox_启动参数.Text = Shortcut.Arguments;
-                            TextBox_起始位置.Text = Shortcut.WorkingDirectory;
-                            TextBox_程序位置.BringToFront();
-                            TextBox_程序名称.BringToFront();
-                            if (TextBox_启动参数.Text != "")
-                            {
-                                TextBox_启动参数.BringToFront();
-                            }
-                            else
-                            {
-                                TextBox_启动参数.SendToBack();
-                            }
-                            if (TextBox_起始位置.Text != "")
-                            {
-                                TextBox_起始位置.BringToFront();
-                            }
-                            else
-                            {
-                                TextBox_起始位置.SendToBack();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + Shortcut.TargetPath, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + openFileDialog1.FileName, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("只支持拖入 .exe .lnk 格式的文件！", "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Handling_File(openFileDialog1.FileName);
             }
         }
         // 添加、写入
