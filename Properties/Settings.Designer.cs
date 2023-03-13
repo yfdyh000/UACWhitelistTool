@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UAC白名单小工具.Properties {
+namespace UAC免提醒.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

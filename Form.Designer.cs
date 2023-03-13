@@ -1,4 +1,4 @@
-﻿namespace UAC白名单小工具
+﻿namespace UAC免提醒
 {
     partial class Form
     {
@@ -281,7 +281,7 @@
             this.MinimizeBox = false;
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UAC白名单小工具";
+            this.Text = "UAC免提醒";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);

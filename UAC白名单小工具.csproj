@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CACE89B6-1927-4695-B915-FA14D349C66C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UAC白名单小工具</RootNamespace>
-    <AssemblyName>UAC白名单小工具</AssemblyName>
+    <RootNamespace>UAC免提醒</RootNamespace>
+    <AssemblyName>UAC免提醒</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,7 +50,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <StartupObject>UAC白名单小工具.Program</StartupObject>
+    <StartupObject>UAC免提醒.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>

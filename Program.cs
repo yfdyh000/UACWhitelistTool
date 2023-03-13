@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UAC白名单小工具
+namespace UAC免提醒
 {
     static class Program
     {

@@ -4,13 +4,13 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text;
 using IWshRuntimeLibrary;
-using UAC白名单小工具.Properties;
+using UAC免提醒.Properties;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.Drawing;
 
-namespace UAC白名单小工具
+namespace UAC免提醒
 {
     public partial class Form : System.Windows.Forms.Form
     {
@@ -37,7 +37,7 @@ namespace UAC白名单小工具
             FileVersionInfo VerInfo = FileVersionInfo.GetVersionInfo(Application.ExecutablePath);
             J_VerInfo = VerInfo.FileVersion;
             J_VerInfo = J_VerInfo.Replace(".0","");
-            this.Text = "UAC白名单小工具 v" + J_VerInfo;
+            this.Text = "UAC免提醒 v" + J_VerInfo;
             //Task.Run(() => Check_Updates(false));
             NotKey();
         }
