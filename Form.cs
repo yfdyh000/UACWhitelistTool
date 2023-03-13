@@ -69,7 +69,7 @@ namespace UAC白名单小工具
                 }
                 else
                 {
-                    MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + pathstr, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("文件不存在！请检查！\n" + pathstr, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (ext == ".lnk")
@@ -105,12 +105,12 @@ namespace UAC白名单小工具
                     }
                     else
                     {
-                        MessageBox.Show("目标文件不存在！请检查！" + Environment.NewLine + Shortcut.TargetPath, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("目标文件不存在！请检查！\n" + Shortcut.TargetPath, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("文件不存在！请检查！" + Environment.NewLine + pathstr, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("文件不存在！请检查！\n" + pathstr, "错误：", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
