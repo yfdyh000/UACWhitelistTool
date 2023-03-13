@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.Drawing;
-using System.Resources;
 
 namespace UAC白名单小工具
 {
@@ -382,7 +381,7 @@ namespace UAC白名单小工具
         // 置顶输入框并修改背景颜色
         private void TextBox_程序位置_Enter(object sender, EventArgs e)
         {
-            TextBox_程序位置.BringToFront();
+            //TextBox_程序位置.BringToFront();
             TextBox_程序位置.BackColor = Color.Gainsboro;
             Label_程序位置.BackColor = Color.Gainsboro;
         }
@@ -452,7 +451,7 @@ namespace UAC白名单小工具
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             string text = @"1. [拖拽] 或 [浏览] 选择一个应用程序 (.exe) 或快捷方式 (.lnk) 。
 2. [程序名称]随意，但必须唯一 不可重复。

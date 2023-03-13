@@ -37,12 +37,12 @@
             this.Button_浏览 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.Button_打开 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.checkBox_添加到右键菜单 = new System.Windows.Forms.CheckBox();
             this.TextBox_启动参数 = new System.Windows.Forms.TextBox();
             this.Label_启动参数 = new System.Windows.Forms.Label();
             this.TextBox_起始位置 = new System.Windows.Forms.TextBox();
             this.Label_起始位置 = new System.Windows.Forms.Label();
+            this.Button_帮助 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Label_程序名称
@@ -70,8 +70,7 @@
             this.TextBox_程序名称.MaxLength = 256;
             this.TextBox_程序名称.Name = "TextBox_程序名称";
             this.TextBox_程序名称.Size = new System.Drawing.Size(464, 18);
-            this.TextBox_程序名称.TabIndex = 1;
-            this.TextBox_程序名称.TabStop = false;
+            this.TextBox_程序名称.TabIndex = 2;
             this.TextBox_程序名称.TextChanged += new System.EventHandler(this.TextBox_程序名称_TextChanged);
             this.TextBox_程序名称.Enter += new System.EventHandler(this.TextBox_程序名称_Enter);
             this.TextBox_程序名称.Leave += new System.EventHandler(this.TextBox_程序名称_Leave);
@@ -88,8 +87,7 @@
             this.TextBox_程序位置.ReadOnly = true;
             this.TextBox_程序位置.ShortcutsEnabled = false;
             this.TextBox_程序位置.Size = new System.Drawing.Size(408, 18);
-            this.TextBox_程序位置.TabIndex = 2;
-            this.TextBox_程序位置.TabStop = false;
+            this.TextBox_程序位置.TabIndex = 0;
             this.TextBox_程序位置.TextChanged += new System.EventHandler(this.TextBox_程序位置_TextChanged);
             this.TextBox_程序位置.Enter += new System.EventHandler(this.TextBox_程序位置_Enter);
             this.TextBox_程序位置.Leave += new System.EventHandler(this.TextBox_程序位置_Leave);
@@ -121,8 +119,7 @@
             this.Button_添加.Location = new System.Drawing.Point(-8, 200);
             this.Button_添加.Name = "Button_添加";
             this.Button_添加.Size = new System.Drawing.Size(512, 44);
-            this.Button_添加.TabIndex = 4;
-            this.Button_添加.TabStop = false;
+            this.Button_添加.TabIndex = 5;
             this.Button_添加.Text = "添加到 UAC 白名单";
             this.Button_添加.UseVisualStyleBackColor = false;
             this.Button_添加.EnabledChanged += new System.EventHandler(this.Button_添加_EnabledChanged);
@@ -138,8 +135,7 @@
             this.Button_浏览.Location = new System.Drawing.Point(440, 0);
             this.Button_浏览.Name = "Button_浏览";
             this.Button_浏览.Size = new System.Drawing.Size(55, 40);
-            this.Button_浏览.TabIndex = 5;
-            this.Button_浏览.TabStop = false;
+            this.Button_浏览.TabIndex = 1;
             this.Button_浏览.Text = "浏览";
             this.Button_浏览.UseVisualStyleBackColor = false;
             this.Button_浏览.Click += new System.EventHandler(this.Button_浏览_Click);
@@ -167,23 +163,9 @@
             this.Button_打开.Name = "Button_打开";
             this.Button_打开.Size = new System.Drawing.Size(512, 36);
             this.Button_打开.TabIndex = 6;
-            this.Button_打开.TabStop = false;
             this.Button_打开.Text = "打开 [任务计划] 删除白名单";
             this.Button_打开.UseVisualStyleBackColor = false;
             this.Button_打开.Click += new System.EventHandler(this.Button_打开_Click);
-            // 
-            // label3
-            // 
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10F);
-            this.label3.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label3.Location = new System.Drawing.Point(421, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 24);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "使用说明";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // checkBox_添加到右键菜单
             // 
@@ -196,7 +178,6 @@
             this.checkBox_添加到右键菜单.Name = "checkBox_添加到右键菜单";
             this.checkBox_添加到右键菜单.Size = new System.Drawing.Size(165, 24);
             this.checkBox_添加到右键菜单.TabIndex = 8;
-            this.checkBox_添加到右键菜单.TabStop = false;
             this.checkBox_添加到右键菜单.Text = "添加本软件到右键菜单";
             this.checkBox_添加到右键菜单.UseVisualStyleBackColor = true;
             this.checkBox_添加到右键菜单.CheckedChanged += new System.EventHandler(this.CheckBox_添加到右键菜单_CheckedChanged);
@@ -211,8 +192,7 @@
             this.TextBox_启动参数.MaxLength = 23333;
             this.TextBox_启动参数.Name = "TextBox_启动参数";
             this.TextBox_启动参数.Size = new System.Drawing.Size(464, 18);
-            this.TextBox_启动参数.TabIndex = 10;
-            this.TextBox_启动参数.TabStop = false;
+            this.TextBox_启动参数.TabIndex = 3;
             this.TextBox_启动参数.Enter += new System.EventHandler(this.TextBox_启动参数_Enter);
             this.TextBox_启动参数.Leave += new System.EventHandler(this.TextBox_启动参数_Leave);
             // 
@@ -241,8 +221,7 @@
             this.TextBox_起始位置.MaxLength = 23333;
             this.TextBox_起始位置.Name = "TextBox_起始位置";
             this.TextBox_起始位置.Size = new System.Drawing.Size(464, 18);
-            this.TextBox_起始位置.TabIndex = 12;
-            this.TextBox_起始位置.TabStop = false;
+            this.TextBox_起始位置.TabIndex = 4;
             this.TextBox_起始位置.Enter += new System.EventHandler(this.TextBox_起始位置_Enter);
             this.TextBox_起始位置.Leave += new System.EventHandler(this.TextBox_起始位置_Leave);
             // 
@@ -261,15 +240,30 @@
             this.Label_起始位置.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Label_起始位置.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Label_起始位置_MouseClick);
             // 
+            // Button_帮助
+            // 
+            this.Button_帮助.BackColor = System.Drawing.Color.White;
+            this.Button_帮助.FlatAppearance.BorderSize = 0;
+            this.Button_帮助.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_帮助.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.Button_帮助.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.Button_帮助.Location = new System.Drawing.Point(420, 164);
+            this.Button_帮助.Name = "Button_帮助";
+            this.Button_帮助.Size = new System.Drawing.Size(75, 32);
+            this.Button_帮助.TabIndex = 7;
+            this.Button_帮助.Text = "使用说明";
+            this.Button_帮助.UseVisualStyleBackColor = false;
+            this.Button_帮助.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 273);
+            this.Controls.Add(this.Button_帮助);
             this.Controls.Add(this.Button_添加);
             this.Controls.Add(this.checkBox_添加到右键菜单);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Button_打开);
             this.Controls.Add(this.Button_浏览);
             this.Controls.Add(this.Label_程序位置);
@@ -305,12 +299,12 @@
         private System.Windows.Forms.Button Button_浏览;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button Button_打开;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox_添加到右键菜单;
         private System.Windows.Forms.TextBox TextBox_启动参数;
         private System.Windows.Forms.Label Label_启动参数;
         private System.Windows.Forms.TextBox TextBox_起始位置;
         private System.Windows.Forms.Label Label_起始位置;
+        private System.Windows.Forms.Button Button_帮助;
     }
 }
 
