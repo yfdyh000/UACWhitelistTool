@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.Drawing;
-using System.Xml.Linq;
 
 namespace UAC白名单小工具
 {
@@ -358,7 +357,7 @@ namespace UAC白名单小工具
 
 勾选 [添加软件到右键菜单] 后，可直接右键 .exe / .lnk 文件添加到 UAC 白名单。
 
-注意：为了方便寻找和删除，添加白名单时 [程序名称] 前会添加 [noUAC.] 标识。";
+注意：为了方便寻找和删除，添加白名单时 [程序名称] 前会添加 [" + 快捷方式前缀 + "] 标识。";
             MessageBox.Show(text, "使用方法", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
