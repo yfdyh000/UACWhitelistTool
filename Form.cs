@@ -381,5 +381,10 @@ namespace UAC免提醒
             if (TextBox_程序位置.Text == "")
                 Button_浏览_Click(sender, e);
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/yfdyh000/UACWhitelistTool");
+        }
     }
 }

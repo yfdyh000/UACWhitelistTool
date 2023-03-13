@@ -43,6 +43,7 @@
             this.TextBox_起始位置 = new System.Windows.Forms.TextBox();
             this.Label_起始位置 = new System.Windows.Forms.Label();
             this.Button_帮助 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // Label_程序名称
@@ -256,12 +257,24 @@
             this.Button_帮助.UseVisualStyleBackColor = false;
             this.Button_帮助.Click += new System.EventHandler(this.button1_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(361, 176);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(53, 12);
+            this.linkLabel1.TabIndex = 12;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "项目页面";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(495, 273);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.Button_帮助);
             this.Controls.Add(this.Button_添加);
             this.Controls.Add(this.checkBox_添加到右键菜单);
@@ -306,6 +319,7 @@
         private System.Windows.Forms.TextBox TextBox_起始位置;
         private System.Windows.Forms.Label Label_起始位置;
         private System.Windows.Forms.Button Button_帮助;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
