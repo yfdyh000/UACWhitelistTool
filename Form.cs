@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.Win32;
 using System.Drawing;
+using System.Xml.Linq;
 
 namespace UAC白名单小工具
 {
@@ -152,16 +153,17 @@ namespace UAC白名单小工具
             //if (!TextBox_程序名称.Text.StartsWith(文件夹名称))
             项目名 = 文件夹名称 + TextBox_程序名称.Text;
             string TempFileName = Path.GetDirectoryName(Application.ExecutablePath) + @"\" + TextBox_程序名称.Text + ".xml";
-            string XML_Text = Resources.XML_前 + Environment.NewLine + Resources.XML_程序位置_前 + TextBox_程序位置.Text + Resources.XML_程序位置_后;
+            string XML_Text = $"{Resources.XML_前}\n{Resources.XML_程序位置_前}{TextBox_程序位置.Text}{Resources.XML_程序位置_后}"
+                ;
             if (TextBox_启动参数.Text != "")
             {
-                XML_Text = XML_Text + Environment.NewLine + Resources.XML_启动参数_前 + TextBox_启动参数.Text + Resources.XML_启动参数_后;
+                XML_Text = $"{XML_Text}\n{Resources.XML_启动参数_前}{TextBox_启动参数.Text}{Resources.XML_启动参数_后}";
             }
             if (TextBox_起始位置.Text != "")
             {
-                XML_Text = XML_Text + Environment.NewLine + Resources.XML_起始位置_前 + TextBox_起始位置.Text + Resources.XML_起始位置_后;
+                XML_Text = $"{XML_Text}\n{Resources.XML_起始位置_前}{TextBox_起始位置.Text}{Resources.XML_起始位置_后}";
             }
-            XML_Text = XML_Text + Environment.NewLine + Resources.XML_后;
+            XML_Text = $"{XML_Text}\n{Resources.XML_后}";
             System.IO.File.WriteAllText(TempFileName, XML_Text, Encoding.Unicode);
             ProcessStartInfo Schtasks = new ProcessStartInfo
             {
