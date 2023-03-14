@@ -164,15 +164,16 @@ namespace UAC免提醒
             }
             XML_Text = $"{XML_Text}\n{Resources.XML_后}";
             System.IO.File.WriteAllText(TempFileName, XML_Text, Encoding.Unicode);
-            ProcessStartInfo Schtasks = new ProcessStartInfo
+            Process Schtask = new Process();
+            //Debug.Print("/create " + "/tn " + '"' + TextBox_程序名称.Text + '"' + " /xml " + '"' + @TempFileName + '"');
+            //Schtasks.Verb = "runas";
+            Schtask.StartInfo = new ProcessStartInfo
             {
                 FileName = "schtasks.exe",
                 WindowStyle = ProcessWindowStyle.Hidden,
                 Arguments = "/create " + "/tn " + '"' + 项目名 + '"' + " /xml " + '"' + @TempFileName + '"'
             };
-            //Debug.Print("/create " + "/tn " + '"' + TextBox_程序名称.Text + '"' + " /xml " + '"' + @TempFileName + '"');
-            //Schtasks.Verb = "runas";
-            Process.Start(Schtasks);
+            Schtask.Start();
             Create_Shortcut(项目名, 快捷方式前缀 + TextBox_程序名称.Text);
             System.Threading.Thread.Sleep(200);
             System.IO.File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + @"\" + TextBox_程序名称.Text + ".xml");
