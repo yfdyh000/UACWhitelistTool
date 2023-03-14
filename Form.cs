@@ -170,10 +170,19 @@ namespace UAC免提醒
             Schtask.StartInfo = new ProcessStartInfo
             {
                 FileName = "schtasks.exe",
+                UseShellExecute = false,
+                CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden,
                 Arguments = "/create " + "/tn " + '"' + 项目名 + '"' + " /xml " + '"' + @TempFileName + '"'
             };
             Schtask.Start();
+            Schtask.WaitForExit();
+            bool SchtaskOK = Schtask.ExitCode == 0;
+            if (!SchtaskOK)
+            {
+                MessageBox.Show("计划任务添加失败", "错误", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //return;
+            }
             Create_Shortcut(项目名, 快捷方式前缀 + TextBox_程序名称.Text);
             System.Threading.Thread.Sleep(200);
             System.IO.File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + @"\" + TextBox_程序名称.Text + ".xml");
