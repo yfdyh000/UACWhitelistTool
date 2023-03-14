@@ -186,7 +186,7 @@ namespace UAC免提醒
             Create_Shortcut(项目名, 快捷方式前缀 + TextBox_程序名称.Text);
             System.Threading.Thread.Sleep(200);
             System.IO.File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + @"\" + TextBox_程序名称.Text + ".xml");
-            MessageBox.Show("UAC白名单添加完成！\n\n快捷方式位于桌面：\n" + System.Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory) + @"\" + TextBox_程序名称.Text + "\n\n只有通过该快捷方式运行才不会提示 UAC，快捷方式可复制、移动、重命名。", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("UAC白名单添加完成！\n\n快捷方式位于桌面：\n" + System.Environment.GetFolderPath(System.Environment.SpecialFolder.DesktopDirectory) + @"\" + 快捷方式前缀 + TextBox_程序名称.Text + "\n\n只有通过该快捷方式运行才不会提示 UAC，快捷方式可复制、移动、重命名。", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         // 创建快捷方式
         public void Create_Shortcut(string taskname, string lnkname)
